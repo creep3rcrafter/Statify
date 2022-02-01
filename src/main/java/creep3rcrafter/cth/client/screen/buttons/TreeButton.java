@@ -1,7 +1,5 @@
 package creep3rcrafter.cth.client.screen.buttons;
 
-import java.awt.Color;
-
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 import creep3rcrafter.cth.client.screen.Tooltip;
@@ -20,10 +18,6 @@ public class TreeButton extends AbstractButton {
 	public Tooltip tooltip;
 	public int uiWidth = 0;
 	public int uiHeight = 0;
-
-	public TreeButton(int xpos, int ypos, int width, int height) {
-		super(xpos, ypos, width, height, StringTextComponent.EMPTY);
-	}
 
 	public TreeButton(int xpos, int ypos, int width, int height, ItemStack itemstack, int uiWidth, int uiHeight) {
 		super(xpos, ypos, width, height, StringTextComponent.EMPTY);

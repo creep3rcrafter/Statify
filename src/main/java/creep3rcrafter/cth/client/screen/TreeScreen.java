@@ -32,13 +32,23 @@ public class TreeScreen extends Screen {
 		// addButton(new TreeButton(10, -36, 158, 32));
 
 		addButton(new TreeSlider(left + 166, top + 30, 172, 0.5f));
+
+		//addButton(new TabButton(left, top + 30, 32, 28));
+		//addButton(new TabButton(left, top + 30 + 28, 32, 28, true));
+		// addButton(new TreeButton(left, top+35, 158, 32, itemManager.daggers.get(1),
+		// width, height));
+		// addButton(new TabButton(left - 28, top, 32, 28));
+		for (int i = 0; i < 6; i++) {
+			int y = (top + i * 28);
+			addButton(new TabButton(left, y + 28, 32, 28));
+
+		}
 		
-		addButton(new TabButton(left - 28, top, 32, 28));
-		//addButton(new TabButton(left - 28, top, 32, 28));
 
 		for (int i = 0; i < 5; i++) {
 			int y = (top + i * 35) + 30;
-			addButton(new TreeButton(left + 5, y, 158, 32, itemManager.daggers.get(i), width, height));
+			// addButton(new TreeButton(left + 5, y, 158, 32, itemManager.daggers.get(i),
+			// width, height));
 
 		}
 	}
