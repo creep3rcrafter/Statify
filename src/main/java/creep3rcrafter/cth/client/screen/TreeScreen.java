@@ -47,8 +47,7 @@ public class TreeScreen extends Screen {
 
 		for (int i = 0; i < 5; i++) {
 			int y = (top + i * 35) + 30;
-			// addButton(new TreeButton(left + 5, y, 158, 32, itemManager.daggers.get(i),
-			// width, height));
+			addButton(new TreeButton(left + 5, y, 158, 32, itemManager.daggers.get(i), width, height));
 
 		}
 	}

@@ -6,7 +6,6 @@ import creep3rcrafter.cth.client.screen.TreeScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.button.AbstractButton;
 import net.minecraft.util.text.StringTextComponent;
-import slimeknights.tconstruct.tools.modifiers.upgrades.armor.StickyModifier;
 
 public class TabButton extends AbstractButton{
 	
@@ -36,8 +35,7 @@ public class TabButton extends AbstractButton{
 
 	@Override
 	public void onPress() {
-		// TODO Auto-generated method stub
-		
+		state = !state;
 	}
 
 }

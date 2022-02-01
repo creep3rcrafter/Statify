@@ -29,7 +29,7 @@ public class ItemManager {
 	public List<ItemStack> leggings = new ArrayList<ItemStack>();
 	public List<ItemStack> boots = new ArrayList<ItemStack>();
 
-	public List<ItemStack> sharpthings = new ArrayList<ItemStack>();
+	public List<ItemStack> weapons = new ArrayList<ItemStack>();
 	public List<ItemStack> swords = new ArrayList<ItemStack>();
 	public List<ItemStack> daggers = new ArrayList<ItemStack>();
 
@@ -76,11 +76,11 @@ public class ItemManager {
 		}
 		items.addAll(tools);
 		items.addAll(armor);
-		items.addAll(sharpthings);
+		items.addAll(weapons);
 
-		sharpthings.addAll(swords);
-		sharpthings.addAll(daggers);
-		sharpthings.addAll(axes);
+		weapons.addAll(swords);
+		weapons.addAll(daggers);
+		weapons.addAll(axes);
 
 		tools.addAll(pickaxes);
 		tools.addAll(axes);
