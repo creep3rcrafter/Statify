@@ -33,9 +33,7 @@ import slimeknights.tconstruct.library.tools.item.ModifiableItem;
 public class GetCommand {
 	static ArgumentBuilder<CommandSource, ?> register()
     {
-        return Commands.literal("get")
-        		.then(Commands.argument("player", EntityArgument.player())
-        		.executes(GetCommand::execute));
+        return Commands.literal("get").executes(GetCommand::execute);
     }
 	/*
 	private static int execute(CommandContext<CommandSource> context) throws CommandSyntaxException

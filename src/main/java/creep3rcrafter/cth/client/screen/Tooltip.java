@@ -19,8 +19,8 @@ public class Tooltip {
 	
 	public Tooltip(){
 		Minecraft minecraft = Minecraft.getInstance();
-		this.width = minecraft.getWindow().getWidth();
-		this.height = minecraft.getWindow().getHeight();
+		this.width = 0;
+		this.height = 0;
 		font = minecraft.font;
 		
 	}

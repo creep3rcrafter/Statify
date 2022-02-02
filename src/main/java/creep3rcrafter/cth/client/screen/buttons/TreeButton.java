@@ -54,5 +54,9 @@ public class TreeButton extends AbstractButton {
 	public void onPress() {
 
 	}
+	
+	public void setItem(ItemStack item) {
+		this.item = item;
+	}
 
 }
