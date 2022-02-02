@@ -19,8 +19,8 @@ public class Tooltip {
 	
 	public Tooltip(){
 		Minecraft minecraft = Minecraft.getInstance();
-		this.width = 0;
-		this.height = 0;
+		this.width = minecraft.getWindow().getWidth();
+		this.height = minecraft.getWindow().getHeight();
 		font = minecraft.font;
 		
 	}
@@ -39,6 +39,7 @@ public class Tooltip {
 
 	public void renderWrappedToolTip(MatrixStack matrixStack, List<? extends ITextProperties> tooltips, int mouseX,
 			int mouseY, FontRenderer font) {
+		matrixStack.pushPose();
 		GuiUtils.drawHoveringText(matrixStack, tooltips, mouseX, mouseY, width, height, -1, font);
 	}
 

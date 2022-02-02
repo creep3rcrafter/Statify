@@ -12,12 +12,16 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.widget.button.AbstractButton;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraftforge.client.event.RenderTooltipEvent;
 
 public class TabButton extends AbstractButton{
 	
 	public boolean state = false;
 	public Tooltip tooltip;
 	public String name;
+	
+	public int tooltipOffsetX = 0;
+	public int tooltipOffsetY = 0;
 
 	public TabButton(int xpos, int ypos, int width, int height, String name) {
 		super(xpos-28, ypos, width, height, StringTextComponent.EMPTY);
@@ -32,6 +36,11 @@ public class TabButton extends AbstractButton{
 		this.name = name;
 	}
 	
+	public void setTooltipOffset(int x, int y) {
+		this.tooltipOffsetX = x;
+		this.tooltipOffsetY = y;
+	}
+	
 	@Override
 	public void render(MatrixStack stack, int mouseX, int mouseY, float partialTicks) {
 		Minecraft minecraft = Minecraft.getInstance();
@@ -43,12 +52,11 @@ public class TabButton extends AbstractButton{
 			}else {
 				blit(stack, x, y, 224, 200, 32, 28);
 			}
-			if (isMouseOver(mouseX, mouseY)) {
-				List<ITextComponent> text = Arrays.asList(new StringTextComponent(name));
-				tooltip.renderWrappedToolTip(stack, text, mouseX, mouseY, font);
-			}
 		}
-		
+		if (isMouseOver(mouseX, mouseY)) {
+			List<ITextComponent> text = Arrays.asList(new StringTextComponent(name));
+			tooltip.renderWrappedToolTip(stack, text, mouseX+tooltipOffsetX, mouseY+tooltipOffsetY, font);
+		}
 	}
 
 	@Override

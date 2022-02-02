@@ -182,11 +182,20 @@ public class TreeScreen extends Screen {
 		addButton(daggersTab);
 		daggersTab.setActive(false);
 
-
 		itemsSubTabs = new TabButton[] {};
 		toolsSubTabs = new TabButton[] { pickaxesTab, axesTab, shovelsTab, hoesTab };
 		weaponsSubTabs = new TabButton[] { swordsTab, axeWeaponsTab,daggersTab };
 		armorSubTabs = new TabButton[] { helmetsTab, chestplatesTab, leggingsTab, bootsTab };
+		
+		for (int i = 0; i < toolsSubTabs.length; i++) {
+			setTooltipOffsets(toolsSubTabs[i]);
+		}
+		for (int i = 0; i < weaponsSubTabs.length; i++) {
+			setTooltipOffsets(weaponsSubTabs[i]);
+		}
+		for (int i = 0; i < armorSubTabs.length; i++) {
+			setTooltipOffsets(armorSubTabs[i]);
+		}
 
 		addButton(new TreeSlider(left + 166, top + 30, 172, 0.5f));
 
@@ -275,5 +284,10 @@ public class TreeScreen extends Screen {
 			}
 			armorSubTabs[0].setAsActiveTab(true);
 		}
+	}
+	
+	public void setTooltipOffsets(TabButton tabButton) {
+		int xoffset = -(22+(5 * tabButton.name.length()));
+		tabButton.setTooltipOffset(xoffset, -5);
 	}
 }
