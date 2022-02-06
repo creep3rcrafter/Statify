@@ -54,24 +54,28 @@ public class TreeScreen extends Screen {
 			@Override
 			public void onPress() {
 				setState();
+				subTabPressed(3, 0);
 			}
 		};
 		chestplatesTab = new TabButton(left, top + 56, 32, 28, "Chestplates", false) {
 			@Override
 			public void onPress() {
 				setState();
+				subTabPressed(3, 1);
 			}
 		};
 		leggingsTab = new TabButton(left, top + 84, 32, 28, "Leggings", false) {
 			@Override
 			public void onPress() {
 				setState();
+				subTabPressed(3, 2);
 			}
 		};
 		bootsTab = new TabButton(left, top + 112, 32, 28, "Boots", false) {
 			@Override
 			public void onPress() {
 				setState();
+				subTabPressed(3, 3);
 			}
 		};
 		// tools
@@ -79,30 +83,28 @@ public class TreeScreen extends Screen {
 			@Override
 			public void onPress() {
 				setState();
+				subTabPressed(1, 0);
 			}
 		};
 		axesTab = new TabButton(left, top + 56, 32, 28, "Axes", false) {
 			@Override
 			public void onPress() {
 				setState();
-			}
-		};
-		axeWeaponsTab = new TabButton(left, top + 56, 32, 28, "Axe Weapons", false) {
-			@Override
-			public void onPress() {
-				setState();
+				subTabPressed(1, 1);
 			}
 		};
 		shovelsTab = new TabButton(left, top + 84, 32, 28, "Shovels", false) {
 			@Override
 			public void onPress() {
 				setState();
+				subTabPressed(1, 2);
 			}
 		};
 		hoesTab = new TabButton(left, top + 112, 32, 28, "Hoes", false) {
 			@Override
 			public void onPress() {
 				setState();
+				subTabPressed(1, 3);
 			}
 		};
 		// weapons
@@ -110,6 +112,7 @@ public class TreeScreen extends Screen {
 			@Override
 			public void onPress() {
 				setState();
+				subTabPressed(2, 0);
 			}
 		};
 		// axes
@@ -117,9 +120,16 @@ public class TreeScreen extends Screen {
 			@Override
 			public void onPress() {
 				setState();
+				subTabPressed(2, 1);
 			}
 		};
-
+		axeWeaponsTab = new TabButton(left, top + 56, 32, 28, "Axe Weapons", false) {
+			@Override
+			public void onPress() {
+				setState();
+				subTabPressed(2, 2);
+			}
+		};
 		itemsTab = new TabButton(left, top - 10, 32, 28, "Items",  true) {
 			@Override
 			public void onPress() {
@@ -227,7 +237,7 @@ public class TreeScreen extends Screen {
 	}
 
 	public void tabPressed(int button) {
-		if (button == 0) {
+		if (button == 0) {//items
 			toolsTab.setState(false);
 			weaponsTab.setState(false);
 			armorTab.setState(false);
@@ -283,6 +293,51 @@ public class TreeScreen extends Screen {
 				armorSubTabs[i].setActive(true);
 			}
 			armorSubTabs[0].setAsActiveTab(true);
+		}
+	}
+	
+	public void subTabPressed(int mainIndex, int index) {
+
+		if (mainIndex == 0) {//items
+			if (index == 0) {
+				
+			} else if (index == 1) {
+
+			} else if (index == 2) {
+				
+			} else if (index == 3) {
+				
+			}
+		} else if (mainIndex == 1) {//tools
+			if (index == 0) {
+				
+			} else if (index == 1) {
+
+			} else if (index == 2) {
+				
+			} else if (index == 3) {
+				
+			}
+		} else if (mainIndex == 2) {//weapons
+			if (index == 0) {
+				
+			} else if (index == 1) {
+
+			} else if (index == 2) {
+				
+			} else if (index == 3) {
+				
+			}
+		} else if (mainIndex == 3) {//armor
+			if (index == 0) {
+				
+			} else if (index == 1) {
+
+			} else if (index == 2) {
+				
+			} else if (index == 3) {
+				
+			}
 		}
 	}
 	
