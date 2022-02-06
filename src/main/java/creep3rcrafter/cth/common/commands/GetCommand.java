@@ -12,11 +12,16 @@ import creep3rcrafter.cth.common.CTHTags;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
 import net.minecraft.command.arguments.EntityArgument;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -68,6 +73,26 @@ public class GetCommand {
             if(tab == null)  tab = ItemGroup.TAB_SEARCH;
             item.fillItemCategory(tab, variants);
             for(ItemStack stack : variants) {
+				if (stack.getItem() instanceof ArmorItem) {
+					if (MobEntity.getEquipmentSlotForItem(stack) == EquipmentSlotType.CHEST) {
+						ITextComponent name = stack.getDisplayName();
+                        IFormattableTextComponent txt = new StringTextComponent("").append(name);
+                        context.getSource().sendSuccess(txt, true);
+					} else if (MobEntity.getEquipmentSlotForItem(stack) == EquipmentSlotType.CHEST) {
+						ITextComponent name = stack.getDisplayName();
+                        IFormattableTextComponent txt = new StringTextComponent("").append(name);
+                        context.getSource().sendSuccess(txt, true);
+					} else if (MobEntity.getEquipmentSlotForItem(stack) == EquipmentSlotType.LEGS) {
+						ITextComponent name = stack.getDisplayName();
+                        IFormattableTextComponent txt = new StringTextComponent("").append(name);
+                        context.getSource().sendSuccess(txt, true);
+					} else if (MobEntity.getEquipmentSlotForItem(stack) == EquipmentSlotType.FEET) {
+						ITextComponent name = stack.getDisplayName();
+                        IFormattableTextComponent txt = new StringTextComponent("").append(name);
+                        context.getSource().sendSuccess(txt, true);
+					}
+				}
+				/*
             	if (stack.getItem() instanceof SwordItem) {
             		Multimap<Attribute, AttributeModifier> mods = stack.getAttributeModifiers(EquipmentSlotType.MAINHAND);
                     Collection<AttributeModifier> damage_mods = mods.get(Attributes.ATTACK_DAMAGE);
@@ -79,9 +104,7 @@ public class GetCommand {
                         context.getSource().sendSuccess(txt, true);
                     }
             	}
-            	
-            	
-                
+            	*/
             }
         }
         return 1;

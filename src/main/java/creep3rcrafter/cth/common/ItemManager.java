@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.google.common.collect.Multimap;
 
+import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -61,22 +62,19 @@ public class ItemManager {
 					daggers.add((ItemStack) stack);
 				}
 				if (stack.getItem() instanceof ArmorItem) {
-					if (stack.getEquipmentSlot() == EquipmentSlotType.HEAD) {
+					if (MobEntity.getEquipmentSlotForItem(stack) == EquipmentSlotType.HEAD) {
 						helmets.add((ItemStack) stack);
-					} else if (stack.getEquipmentSlot() == EquipmentSlotType.CHEST) {
+					} else if (MobEntity.getEquipmentSlotForItem(stack) == EquipmentSlotType.CHEST) {
 						chestplates.add((ItemStack) stack);
-					} else if (stack.getEquipmentSlot() == EquipmentSlotType.LEGS) {
+					} else if (MobEntity.getEquipmentSlotForItem(stack) == EquipmentSlotType.LEGS) {
 						leggings.add((ItemStack) stack);
-					} else if (stack.getEquipmentSlot() == EquipmentSlotType.FEET) {
+					} else if (MobEntity.getEquipmentSlotForItem(stack) == EquipmentSlotType.FEET) {
 						boots.add((ItemStack) stack);
 					}
 				}
 
 			}
 		}
-		items.addAll(tools);
-		items.addAll(armor);
-		items.addAll(weapons);
 
 		weapons.addAll(swords);
 		weapons.addAll(daggers);
@@ -91,6 +89,10 @@ public class ItemManager {
 		armor.addAll(chestplates);
 		armor.addAll(leggings);
 		armor.addAll(boots);
+		
+		items.addAll(tools);
+		items.addAll(armor);
+		items.addAll(weapons);
 
 		// armor.get(1).getOrCreateTag().putString(null, null);
 	}

@@ -40,6 +40,8 @@ public class TreeScreen extends Screen {
 	public TabButton[] weaponsSubTabs;
 	public TabButton[] armorSubTabs;
 
+	public TreeButton[] treebuttons = new TreeButton[5];
+
 	public TreeScreen() {
 		super(new TranslationTextComponent("container.Tree"));
 		itemManager = new ItemManager();
@@ -115,14 +117,6 @@ public class TreeScreen extends Screen {
 				subTabPressed(2, 0);
 			}
 		};
-		// axes
-		daggersTab = new TabButton(left, top + 84, 32, 28, "Daggers",  false) {
-			@Override
-			public void onPress() {
-				setState();
-				subTabPressed(2, 1);
-			}
-		};
 		axeWeaponsTab = new TabButton(left, top + 56, 32, 28, "Axe Weapons", false) {
 			@Override
 			public void onPress() {
@@ -130,7 +124,14 @@ public class TreeScreen extends Screen {
 				subTabPressed(2, 2);
 			}
 		};
-		itemsTab = new TabButton(left, top - 10, 32, 28, "Items",  true) {
+		daggersTab = new TabButton(left, top + 84, 32, 28, "Daggers", false) {
+			@Override
+			public void onPress() {
+				setState();
+				subTabPressed(2, 1);
+			}
+		};
+		itemsTab = new TabButton(left, top - 10, 32, 28, "Items", true) {
 			@Override
 			public void onPress() {
 				setState();
@@ -138,21 +139,21 @@ public class TreeScreen extends Screen {
 
 			}
 		};
-		toolsTab = new TabButton(left + 40, top - 10, 32, 28, "Tools",  false) {
+		toolsTab = new TabButton(left + 40, top - 10, 32, 28, "Tools", false) {
 			@Override
 			public void onPress() {
 				setState();
 				tabPressed(1);
 			}
 		};
-		weaponsTab = new TabButton(left + 80, top - 10, 32, 28, "Weapons",  false) {
+		weaponsTab = new TabButton(left + 80, top - 10, 32, 28, "Weapons", false) {
 			@Override
 			public void onPress() {
 				setState();
 				tabPressed(2);
 			}
 		};
-		armorTab = new TabButton(left + 120, top - 10, 32, 28, "Armor",  false) {
+		armorTab = new TabButton(left + 120, top - 10, 32, 28, "Armor", false) {
 			@Override
 			public void onPress() {
 				setState();
@@ -194,9 +195,9 @@ public class TreeScreen extends Screen {
 
 		itemsSubTabs = new TabButton[] {};
 		toolsSubTabs = new TabButton[] { pickaxesTab, axesTab, shovelsTab, hoesTab };
-		weaponsSubTabs = new TabButton[] { swordsTab, axeWeaponsTab,daggersTab };
+		weaponsSubTabs = new TabButton[] { swordsTab, daggersTab, axeWeaponsTab };
 		armorSubTabs = new TabButton[] { helmetsTab, chestplatesTab, leggingsTab, bootsTab };
-		
+
 		for (int i = 0; i < toolsSubTabs.length; i++) {
 			setTooltipOffsets(toolsSubTabs[i]);
 		}
@@ -211,7 +212,8 @@ public class TreeScreen extends Screen {
 
 		for (int i = 0; i < 5; i++) {
 			int y = (top + i * 35) + 30;
-			addButton(new TreeButton(left + 5, y, 158, 32, itemManager.daggers.get(i), width, height));
+			treebuttons[i] = new TreeButton(left + 5, y, 158, 32, itemManager.armor.get(i), width, height);
+			addButton(treebuttons[i]);
 
 		}
 	}
@@ -237,7 +239,7 @@ public class TreeScreen extends Screen {
 	}
 
 	public void tabPressed(int button) {
-		if (button == 0) {//items
+		if (button == 0) {// items
 			toolsTab.setState(false);
 			weaponsTab.setState(false);
 			armorTab.setState(false);
@@ -295,54 +297,45 @@ public class TreeScreen extends Screen {
 			armorSubTabs[0].setAsActiveTab(true);
 		}
 	}
-	
+
 	public void subTabPressed(int mainIndex, int index) {
-
-		if (mainIndex == 0) {//items
-			if (index == 0) {
-				
-			} else if (index == 1) {
-
-			} else if (index == 2) {
-				
-			} else if (index == 3) {
-				
+		if (mainIndex == 0) {
+			
+		} else if (mainIndex == 1) {// tools
+			for (int i = 0; i < toolsSubTabs.length; i++) {
+				toolsSubTabs[i].setState(false);
 			}
-		} else if (mainIndex == 1) {//tools
-			if (index == 0) {
-				
-			} else if (index == 1) {
-
-			} else if (index == 2) {
-				
-			} else if (index == 3) {
-				
+			toolsSubTabs[index].setState(true);
+			treebuttons[0].setItem(itemManager.tools.get(0));
+			treebuttons[1].setItem(itemManager.tools.get(1));
+			treebuttons[2].setItem(itemManager.tools.get(2));
+			treebuttons[3].setItem(itemManager.tools.get(3));
+			treebuttons[4].setItem(itemManager.tools.get(4));
+		} else if (mainIndex == 2) {// weapons
+			for (int i = 0; i < weaponsSubTabs.length; i++) {
+				weaponsSubTabs[i].setState(false);
 			}
-		} else if (mainIndex == 2) {//weapons
-			if (index == 0) {
-				
-			} else if (index == 1) {
-
-			} else if (index == 2) {
-				
-			} else if (index == 3) {
-				
+			weaponsSubTabs[index].setState(true);
+			treebuttons[0].setItem(itemManager.weapons.get(0));
+			treebuttons[1].setItem(itemManager.weapons.get(1));
+			treebuttons[2].setItem(itemManager.weapons.get(2));
+			treebuttons[3].setItem(itemManager.weapons.get(3));
+			treebuttons[4].setItem(itemManager.weapons.get(4));
+		} else if (mainIndex == 3) {// armor
+			for (int i = 0; i < armorSubTabs.length; i++) {
+				armorSubTabs[i].setState(false);
 			}
-		} else if (mainIndex == 3) {//armor
-			if (index == 0) {
-				
-			} else if (index == 1) {
-
-			} else if (index == 2) {
-				
-			} else if (index == 3) {
-				
-			}
+			armorSubTabs[index].setState(true);
+			treebuttons[0].setItem(itemManager.armor.get(0));
+			treebuttons[1].setItem(itemManager.armor.get(1));
+			treebuttons[2].setItem(itemManager.armor.get(2));
+			treebuttons[3].setItem(itemManager.armor.get(3));
+			treebuttons[4].setItem(itemManager.armor.get(4));
 		}
 	}
-	
+
 	public void setTooltipOffsets(TabButton tabButton) {
-		int xoffset = -(22+(5 * tabButton.name.length()));
+		int xoffset = -(22 + (5 * tabButton.name.length()));
 		tabButton.setTooltipOffset(xoffset, -5);
 	}
 }

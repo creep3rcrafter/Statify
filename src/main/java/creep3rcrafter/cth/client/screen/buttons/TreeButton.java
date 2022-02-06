@@ -55,8 +55,8 @@ public class TreeButton extends AbstractButton {
 
 	}
 	
-	public void setItem(ItemStack item) {
-		this.item = item;
+	public void setItem(ItemStack itemStack) {
+		this.item = itemStack;
 	}
 
 }
