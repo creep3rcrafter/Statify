@@ -11,7 +11,7 @@ import net.minecraft.command.Commands;
 public class OpenTreeCommand {
 	static ArgumentBuilder<CommandSource, ?> register()
     {
-        return Commands.literal("opentree").executes(OpenTreeCommand::execute);
+        return Commands.literal("open").executes(OpenTreeCommand::execute);
     }
 	private static int execute(CommandContext<CommandSource> context) throws CommandSyntaxException
     {
