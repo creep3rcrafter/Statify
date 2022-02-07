@@ -1,4 +1,4 @@
-package creep3rcrafter.cth.common.commands;
+package creep3rcrafter.statify.common.commands;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.minecraft.command.CommandSource;
@@ -11,7 +11,7 @@ public class Commands {
     public void onRegisterCommands(RegisterCommandsEvent event)
     {
         event.getDispatcher().register(
-            LiteralArgumentBuilder.<CommandSource>literal("cth")
+            LiteralArgumentBuilder.<CommandSource>literal("statify")
             .requires(source -> source.hasPermission(2))
             .then(GetCommand.register())
             .then(OpenTreeCommand.register()));

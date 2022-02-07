@@ -1,10 +1,10 @@
-package creep3rcrafter.cth.common.commands;
+package creep3rcrafter.statify.common.commands;
 
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
-import creep3rcrafter.cth.client.screen.TreeScreen;
+import creep3rcrafter.statify.client.screen.TreeScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;

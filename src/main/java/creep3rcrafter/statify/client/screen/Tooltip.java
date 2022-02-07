@@ -1,4 +1,4 @@
-package creep3rcrafter.cth.client.screen;
+package creep3rcrafter.statify.client.screen;
 
 import java.util.List;
 

@@ -1,12 +1,12 @@
-package creep3rcrafter.cth.client.screen.buttons;
+package creep3rcrafter.statify.client.screen.buttons;
 
 import java.util.Arrays;
 import java.util.List;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 
-import creep3rcrafter.cth.client.screen.Tooltip;
-import creep3rcrafter.cth.client.screen.TreeScreen;
+import creep3rcrafter.statify.client.screen.Tooltip;
+import creep3rcrafter.statify.client.screen.TreeScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.widget.button.AbstractButton;

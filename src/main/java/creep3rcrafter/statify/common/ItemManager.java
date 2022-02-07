@@ -1,4 +1,4 @@
-package creep3rcrafter.cth.common;
+package creep3rcrafter.statify.common;
 
 import java.util.ArrayList;
 import java.util.List;

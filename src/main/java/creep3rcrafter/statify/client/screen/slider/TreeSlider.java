@@ -1,11 +1,11 @@
-package creep3rcrafter.cth.client.screen.slider;
+package creep3rcrafter.statify.client.screen.slider;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.sun.jna.platform.win32.WinDef.HICON;
 
-import creep3rcrafter.cth.client.screen.TreeScreen;
 import creep3rcrafter.math.BetterMath;
+import creep3rcrafter.statify.client.screen.TreeScreen;
 import net.java.games.input.Mouse;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.MouseHelper;

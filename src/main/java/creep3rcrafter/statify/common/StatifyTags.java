@@ -1,6 +1,6 @@
-package creep3rcrafter.cth.common;
+package creep3rcrafter.statify.common;
 
-import creep3rcrafter.cth.CTH;
+import creep3rcrafter.statify.Statify;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.tags.BlockTags;
@@ -8,11 +8,11 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.Tags;
 
-public class CTHTags {
+public class StatifyTags {
 	
 	public static class Blocks {
 		private static Tags.IOptionalNamedTag<Block> createTag(String name){
-			return BlockTags.createOptional(new ResourceLocation(CTH.MOD_ID, name));
+			return BlockTags.createOptional(new ResourceLocation(Statify.MOD_ID, name));
 		}
 		private static Tags.IOptionalNamedTag<Block> createForgeTag(String name){
 			return BlockTags.createOptional(new ResourceLocation("forge", name));
@@ -29,7 +29,7 @@ public class CTHTags {
 		//public static final Tags.IOptionalNamedTag<Item> HOES = createTag("hoes");
 		
 		private static Tags.IOptionalNamedTag<Item> createTag(String name){
-			return ItemTags.createOptional(new ResourceLocation(CTH.MOD_ID, name));
+			return ItemTags.createOptional(new ResourceLocation(Statify.MOD_ID, name));
 		}
 		private static Tags.IOptionalNamedTag<Item> createForgeTag(String name){
 			return ItemTags.createOptional(new ResourceLocation("forge", name));

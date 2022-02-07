@@ -1,4 +1,4 @@
-package creep3rcrafter.cth.common;
+package creep3rcrafter.statify.common;
 
 import net.minecraft.item.ItemStack;
 import slimeknights.tconstruct.tools.TinkerTools;

@@ -1,11 +1,11 @@
-package creep3rcrafter.cth.client.screen;
+package creep3rcrafter.statify.client.screen;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 
-import creep3rcrafter.cth.client.screen.buttons.TabButton;
-import creep3rcrafter.cth.client.screen.buttons.TreeButton;
-import creep3rcrafter.cth.client.screen.slider.TreeSlider;
-import creep3rcrafter.cth.common.ItemManager;
+import creep3rcrafter.statify.client.screen.buttons.TabButton;
+import creep3rcrafter.statify.client.screen.buttons.TreeButton;
+import creep3rcrafter.statify.client.screen.slider.TreeSlider;
+import creep3rcrafter.statify.common.ItemManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.IHasContainer;
 import net.minecraft.client.gui.screen.Screen;

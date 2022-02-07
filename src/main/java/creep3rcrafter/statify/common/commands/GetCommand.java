@@ -1,4 +1,4 @@
-package creep3rcrafter.cth.common.commands;
+package creep3rcrafter.statify.common.commands;
 
 import java.util.Collection;
 
@@ -7,8 +7,8 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
-import creep3rcrafter.cth.CTH;
-import creep3rcrafter.cth.common.CTHTags;
+import creep3rcrafter.statify.Statify;
+import creep3rcrafter.statify.common.StatifyTags;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
 import net.minecraft.command.arguments.EntityArgument;
