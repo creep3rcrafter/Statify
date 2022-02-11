@@ -20,7 +20,7 @@ public class Statify {
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
 
 	}
-
+	
 	private void commonSetup(final FMLCommonSetupEvent event) {
 		MinecraftForge.EVENT_BUS.register(new EventHandler());
 		MinecraftForge.EVENT_BUS.register(new Commands());
