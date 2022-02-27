@@ -634,7 +634,6 @@ public class BetterMath {
         return Math.sqrt(Math.pow(v1.x - v2.x, 2) + Math.pow(v1.y - v2.y, 2));
 
     }
-    //Slope yÃ¢â€šâ€š Ã¢â‚¬â€œ yÃ¢â€šï¿½ / xÃ¢â€šâ€š Ã¢â‚¬â€œ xÃ¢â€šï¿½
 
     //slope intercept y=mx+b.
     //vector2 midpoint (xÃ¢â€šï¿½+xÃ¢â€šâ€š) / 2, (yÃ¢â€šï¿½+yÃ¢â€šâ€š) / 2        takes 2 vector 2 points and outputs a vector 2 point
@@ -656,49 +655,6 @@ public class BetterMath {
         public Vector2(double x, double y){
             this.x = x;
             this.y = y;
-        }
-    }
-    public static class Fraction{
-        private int numerator;
-        private int denominator;
-        public Fraction() {
-            numerator = 0;
-            denominator = 1;
-        }
-        public Fraction(int num) {
-            numerator = num;
-            denominator = 1;
-        }
-        public Fraction(int num, int denom) {
-            numerator = (denom < 0 ? -num : num);
-            if (denom == 0) {
-                denominator = 1;
-            }
-            denominator = (denom < 0 ? -denom : denom);
-            reduce();
-        }
-        private void reduce() {
-            int n = numerator, d = denominator, largest;
-            if (numerator < 0) {
-                n = -numerator;
-            }
-            if (n > d) {
-                largest = n;
-            }
-            else {
-                largest = d;
-            }
-            int gcd = 0;
-            for (int i = largest; i >= 2; i--) {
-                if (numerator % i == 0 && denominator % i == 0) {
-                    gcd = i;
-                    break;
-                }
-            }
-            if (gcd != 0) {
-                numerator /= gcd;
-                denominator /= gcd;
-            }
         }
     }
 }
